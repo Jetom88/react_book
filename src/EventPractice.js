@@ -9,6 +9,9 @@ import React, { Component } from "react";
 //컴퓨터 과학에서 풀(pool)은 재사용 될 준비를 하는 자원(Resource)의 집합
 
 class EventPractice extends Component {
+  state = {
+    message: "",
+  };
   render() {
     return (
       <div>
@@ -16,10 +19,19 @@ class EventPractice extends Component {
         <input
           name="message"
           placeholder="아무거나"
+          value={this.state.message}
           onChange={(e) => {
-            console.log(e.target.value);
+            this.setState({ message: e.target.value });
           }}
         />
+        <button
+          onClick={() => {
+            alert(this.state.message);
+            this.setState({ message: "" });
+          }}
+        >
+          확인
+        </button>
       </div>
     );
   }
