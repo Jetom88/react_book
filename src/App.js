@@ -1,6 +1,5 @@
-import logo from "./logo.svg";
-import "./App.css";
 import React, { useState } from "react";
+import EventPractice from "./EventPractice";
 
 function App() {
   const [message, setMessage] = useState("");
@@ -16,8 +15,7 @@ function App() {
 
   return (
     <div className="App">
-      <button onClick={onClickEnter}>ㅎ2</button>
-      <button onClick={onClickLeave}>ㅃ2</button>
+      <EventPractice />
     </div>
   );
 }
