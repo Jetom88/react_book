@@ -1,6 +1,7 @@
 import ScrollBox from "./ScrollBox";
 import React, { Component, useState } from "react";
 import Counter from "./Counter";
+import Info from "./Info";
 
 const App = () => {
   const [visible, setVisible] = useState(false);
@@ -15,7 +16,7 @@ const App = () => {
       </button>
 
       <hr />
-      {visible && <Counter />}
+      {visible && <Info />}
     </div>
   );
 };
