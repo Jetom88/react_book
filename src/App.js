@@ -1,18 +1,23 @@
 import ScrollBox from "./ScrollBox";
-import React, { Component } from "react";
-import IterationSample from "./IterationSample";
+import React, { Component, useState } from "react";
+import Counter from "./Counter";
 
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <ScrollBox ref={(ref) => (this.scrollBox = ref)} />
-        <button onClick={() => this.scrollBox.scrollToBottom()}>밑으루</button>
+const App = () => {
+  const [visible, setVisible] = useState(false);
+  return (
+    <div>
+      <button
+        onClick={() => {
+          setVisible(!visible);
+        }}
+      >
+        {visible ? "숨기기" : "보이기"}
+      </button>
 
-        <IterationSample />
-      </div>
-    );
-  }
-}
+      <hr />
+      {visible && <Counter />}
+    </div>
+  );
+};
 
 export default App;
